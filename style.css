@@ -1,0 +1,323 @@
+@font-face {
+    font-family: 'book';
+    src: url(FreightBigProBook.otf);
+}
+@font-face {
+    font-family: "light";
+    src: url(Freight\ Big\ Pro\ Light.otf);
+}
+@font-face {
+    font-family: "roman";
+    src: url(HelveticaNeue-Roman.otf);
+}
+*{
+               margin: 0;
+               padding: 0;
+               box-sizing: border-box;
+               font-family: "light";
+            }
+            html,body{
+                width: 100%;
+                height: 100%;
+            }
+            #main{
+                background-color: black;
+            }
+            .loader{
+                height: 100vh;
+                width: 100%;
+                background-color: black;
+                position: fixed;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                z-index: 99;
+                /* display: none; */
+            }
+            .yellow1{
+                width: 100%;
+                height: 100%;
+                background-color: #F5E41B;
+                position: absolute;
+                z-index: 8;
+            }
+            .yellow2{
+                width: 100%;
+                height: 100%;
+                background-color: #F5E41B;
+                position: absolute;
+                z-index: 7;
+            }
+            .loader h1{
+                  color: #fff;
+        text-transform: uppercase;
+        font-weight: 300;
+        font-size: 6.4rem;
+        line-height: 5rem;
+        position: relative;
+        z-index: 9;
+      }
+      .loader video{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        z-index: 6;
+      }
+      .page1{
+        height: 100vh;
+        width: 100%;
+        background-color: #F5E41B;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }      
+      .page1 h1{
+        color: black;
+        text-transform: uppercase;
+        font-weight: 300;
+        font-size: 6.4rem;
+        line-height: 5rem;
+      }
+
+.nav{
+    width: 100%;
+    height: 100px;
+    background-color: #F5E41B;
+    /* position: absolute; */
+    padding: 10px 40px;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.nav img{
+    width: 75px;
+    height: 15.84px;
+    object-fit: cover;
+}
+.nav2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    
+}
+.nav2 h4{
+    font-family: "roman";
+    font-weight: 200;
+}
+.page2{
+    height: 100vh;
+    width: 100%;
+    background-color: black;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    background-size: cover;
+    background-position: center;
+    /* z-index: 11; */
+}
+
+.elem{
+    /* background-color: crimson; */
+    width: 100%;
+    position: relative;
+    cursor: pointer;
+}
+.elem .blur{
+    width: 30%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    height: 100%;
+    transform: translate(-50%,-50%);
+    background: linear-gradient(to right,#f5e31bf0,#F5E41B,#f5e31bf6);
+    box-shadow: 10px 0 20px 20px #F5E41B;
+    z-index: 8;
+}
+.elem h2{
+    font-size: 6rem;
+    font-weight: 200;
+    line-height: 5rem;
+    font-family: "light";
+    text-transform: uppercase;
+    position: relative;
+    z-index: 9;
+    letter-spacing: 2px;
+}
+.elem .moving{
+    background-color: #F5E41B;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 10px 0px;
+    position: absolute;
+    top: 50%;
+    transform: translate(0,-45%) scaleY(0);
+    opacity: 0;
+    transition: all ease 0.5s;
+}
+.elem .moving .moving-in{
+    /* background-color: aqua; */
+    display: inline-block;
+    white-space: nowrap;
+    animation-name: moving;
+    animation-duration: 7s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+.elem .moving .moving-in h5{
+    display: inline-block;
+    color: black;
+    font-size: 15px;
+    font-family: "roman";
+    text-transform: uppercase;
+    margin-right:30px;
+    font-weight: 100;
+    opacity: 0;
+    transition: all ease 0.5s;
+    transition-delay: 0.3s;
+}
+.elem:hover .moving{
+  transform: translate(0,-45%) scaleY(1);
+  opacity: 1;
+}
+.elem:hover .moving h5{
+    opacity: 1;
+}
+.elem:hover h2{
+    font-style: italic;
+}
+
+.page3{
+    min-height: 100vh;
+    width: 100%;
+    background-color: #fff;
+    padding-top: 30px;
+}
+.img-container{
+    padding: 20px 25px;
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+.image-div{
+    /* height: 35vw; */
+    width: 30vw;
+    position: relative;
+    margin: 40px 15px;
+    overflow: hidden;
+    transition: all ease 0.2s;
+}
+.image-div img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: all ease 0.4s;
+}
+.overlay{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.953);
+    color: white;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    opacity: 0;
+    transition: all ease 0.2s;
+    transition-delay: 0.2s;
+}
+.overlay p{
+    font-size:2rem;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 2rem;
+    opacity: 0;
+    transition: all ease 0.2s;
+    transition-delay: 0.2s;
+}
+.image-div:hover .overlay{
+    opacity: 1;
+}
+.image-div:hover .overlay p{
+    opacity: 1;
+}
+.image-div:hover {
+    scale: 1.1;
+}
+ 
+.line .image-div:nth-child(n){
+    height: 550px;
+}
+
+@keyframes moving {
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
+
+#footer{
+    height: 40vh;
+    width: 100%;
+    background-color: white;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+}
+#footer h2{
+    font-size: 30px;
+    font-weight: 100;
+}
+#footer h3{
+    font-family: "roman";
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 100;
+}
+#footer #foot{
+    height: 60%;
+    width: 100%;
+    background-color: #F5E41B;
+    color: black;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 20px 30px;
+    margin-bottom: 20px;
+}
+#footer #foot p{
+    font-size: 20px;
+    font-weight: 100;
+    font-family: "roman";
+}
+#footer #foot .second{
+    display: flex;
+    align-items: center;
+    /* justify-content: space-evenly; */
+    gap:3rem ;
+    /* flex-direction: row; */
+}
+#footer #foot .second .child3{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* flex-wrap: wrap; */
+    /* justify-content: flex-start; */
+}
+#footer #foot .second h3{
+font-size: 15px;
+}
